@@ -59,3 +59,17 @@ SALARY — зарплата сотрудника с данной специал�
         cnt_orders DESC
     LIMIT
         5;
+
+### 3
+Выводит список ID всех сотрудников, у которых в специализации содержится «менеджер», с зарплатой больше 70 000 рублей.
+
+    SELECT
+        Employees.EMPLOYEE_ID AS EMPLOYEE_ID,
+        Jobs.JOB_TYPE AS JOB_TYPE,
+        Jobs.SALARY AS SALARY
+    FROM
+        Employees
+    INNER JOIN Jobs ON Employees.JOB_ID = Jobs.JOB_ID 
+    WHERE
+        Jobs.JOB_TYPE LIKE '%менеджер%'
+        AND Jobs.SALARY > 70000;
