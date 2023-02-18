@@ -1,3 +1,5 @@
+## Entity-relationship diagram
+
 ![Header](https://github.com/HechavarriaBogdan/SQL-Queries/blob/main/assets/diploma-333.png)
 
 ## Initial data
@@ -26,3 +28,15 @@ JOB_ID — ID специализации, int;
 JOB_TYPE — тип специализации, char;
 HOURS — число рабочих часов в неделю, int;
 SALARY — зарплата сотрудника с данной специализацией в рублях, int;
+
+## SQL Queries
+
+Выберает все заказы, где есть хотя бы один товар - «гречка» и время доставки свыше 30 минут. В результирующей таблице выводятся ID заказов и ID курьеров.
+
+SELECT
+        ORDERS_ID,
+        EMPLOYEE_ID
+FROM
+        Orders
+WHERE
+        ITEMS LIKE '%гречка%' AND DELIVERY_TIME > 30;
